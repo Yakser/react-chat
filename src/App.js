@@ -1,18 +1,13 @@
-import { io } from "socket.io-client";
 
+import "./App.scss";
+import JoinBlock from './components/JoinBlock';
 
-const connectSocket = () => {
-  const socket = io("http://localhost:8000", );
-  console.log(123);
-}
-
-const  App = () => {
+const App = () => {
     return (
-        <div className="App">
-            Hello
-            <button onClick={connectSocket}>connect</button>
+        <div className="wrapper">
+            <JoinBlock />
         </div>
     );
-}
+};
 
 export default App;

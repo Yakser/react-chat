@@ -1,0 +1,24 @@
+.joinBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+}
+
+button, input {
+    width: 100%;
+    border: 1px solid white;
+    border-radius: 10000px;
+    background-color: transparent;
+    padding: 10px;
+    outline: none;
+    margin: 15px 0;
+    &::placeholder {
+        color: white;
+    }
+}
+
+button {
+    cursor: pointer;
+    background-color: white;
+}
