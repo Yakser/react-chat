@@ -16,7 +16,7 @@ const Chat = ({ users, messages, username, roomId, onAddMessage }) => {
     };
 
     useEffect(() => {
-        messagesRef.current.scrollTo(0, 100 * messages.length); // height of message block * messages count
+        messagesRef.current.scrollTo(0, messagesRef.current.scrollHeight); 
     }, [messages]);
 
     return (
