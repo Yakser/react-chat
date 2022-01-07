@@ -1,16 +1,42 @@
+@import './fonts/fonts.scss';
+@import './variables.scss';
 *,
 html,
 body {
     margin: 0;
     padding: 0;
+    font-family: "SF Pro Display";
+    font-size: 16px;
+    list-style: none;
+    color: $white;
+}
+
+body {
+    background-color: $gray;
 }
 
 .wrapper {
     width: 1200px;
-    margin: 25px auto;
+    margin: 30px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(233, 227, 239);
-    border-radius: 15px;
+    background-color: $blue;
+    border-radius: 18px;
+    overflow: visible;
+    box-shadow: 2px 4px 12px rgb(0 0 0 / 16%);
+    padding: 30px;
+}
+
+.btn {
+    width: max-content;
+    font-size: 17px;
+    padding: 8px 16px;
+    letter-spacing: -.022em;
+    cursor: pointer;
+    background-color: $white;
+    color: $black;
+    &:hover {
+        background-color: darken($color: $white, $amount: 4);
+    }
 }

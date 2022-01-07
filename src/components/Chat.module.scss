@@ -1,0 +1,92 @@
+@import './../variables.scss';
+.chat {
+    width: 1200px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.users {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border: 1px solid $white;
+    border-radius: 18px;
+    padding: 18px;
+    .usersCount {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 18px;
+        li {
+            background-color: rgba($white, .7);
+            color: $black;
+            border-radius: 100000px;
+            padding: 5px 10px;
+            font-weight: 500;
+            box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.chatMessages {
+    width: calc(1200px - 200px);
+    padding: 18px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow: auto;
+    width: 100%;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    .text {
+        background-color: $white;
+        border-radius: 18px;
+        padding: 10px;
+        color: $black;
+        width: 100%;
+        word-wrap: break-word;
+    }
+    &:not(:last-child) {
+        margin-bottom: 18px;
+    }
+    .username {
+        display: inline-block;
+        opacity: .7;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+}
+
+.chatInput {
+    margin-top: 30px;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: $black;
+    background-color: $white;
+    border-radius: 18px;
+    padding: 10px;
+    resize: none;
+    &::placeholder {
+        color: #6E6E73;
+    }
+}
+
+.room {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}

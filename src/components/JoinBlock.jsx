@@ -1,36 +1,41 @@
 import React, { useState } from "react";
 import socket from "../socket";
-import axios from 'axios';
+import axios from "axios";
 
 import styles from "./JoinBlock.module.scss";
 
-const JoinBlock = () => {
+const JoinBlock = ({ onLogin }) => {
     const [roomId, setRoomId] = useState("");
     const [username, setUsername] = useState("");
 
-    const onEnter = () => {
+    const onEnter = async () => {
         if (!roomId | !username) {
-            return alert('Incorrect data!')
+            return alert("Incorrect data!");
         }
-        
-        axios.post('/rooms', {roomId, username});
+        const data = { roomId, username };
+        await axios.post("/rooms", data);
+        onLogin(data);
     };
 
     return (
         <div className={styles.joinBlock}>
-            <input
-                type="text"
-                placeholder="Room ID"
-                value={roomId}
-                onChange={(event) => setRoomId(event.target.value)}
-            />
-            <input
-                type="text"
-                placeholder="Nickname"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-            />
-            <button onClick={onEnter}>Join</button>
+            <form onSubmit={(e) => e.preventDefault()}>
+                <input
+                    type="text"
+                    placeholder="Room ID"
+                    value={roomId}
+                    onChange={(event) => setRoomId(event.target.value)}
+                />
+                <input
+                    type="text"
+                    placeholder="Nickname"
+                    value={username}
+                    onChange={(event) => setUsername(event.target.value)}
+                />
+                <button onClick={onEnter} className="btn">
+                    Join
+                </button>
+            </form>
         </div>
     );
 };
